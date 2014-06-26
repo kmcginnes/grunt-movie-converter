@@ -1,12 +1,14 @@
 module.exports = (grunt) ->
 
+  filesToDelete = []
+
   grunt.initConfig
     ffmpeg:
       compile:
         options:
           # debug: true
-          # onEnd: (input, output) ->
-          #   console.log(input + ' -> ' + output)
+          onEnd: (input, output) ->
+            filesToDelete.push input
           onError: (error, input, output) ->
             console.log('error on: ' + input + ' ['+ error +']')
           # onCodecData: (data, input) ->
@@ -18,17 +20,21 @@ module.exports = (grunt) ->
           [
             expand: true
             cwd: '.'
-            src: ['**/*.avi', '**/*.ts']
+            src: ['**/*.avi', '**/*.ts', '**/*.wmv']
             dest: '.'
             ext: '.m4v'
           ]
 
   grunt.task.registerTask 'banner', () ->
-    console.log(grunt.file.read('banner.txt'))
+    grunt.log.subhead(grunt.file.read('banner.txt'))
+
+  grunt.registerTask 'print', () ->
+    for file in filesToDelete
+      grunt.log.ok 'Deleting ' + file
 
   # grunt.loadNpmTasks 'grunt-exec'
   grunt.loadNpmTasks 'grunt-ffmpeg'
 
-  grunt.registerTask 'default', ['banner','ffmpeg']
+  grunt.registerTask 'default', ['banner','ffmpeg','print']
 
   null
