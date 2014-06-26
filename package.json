@@ -1,0 +1,14 @@
+{
+  "name": "grunt-movie-converter",
+  "version": "0.0.1",
+  "description": "Converts movies to AppleTV compatible",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kris McGinnes",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-ffmpeg": "^0.1.3"
+  }
+}
