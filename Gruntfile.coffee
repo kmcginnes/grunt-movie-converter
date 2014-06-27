@@ -24,6 +24,7 @@ module.exports = (grunt) ->
             dest: '.'
             ext: '.m4v'
           ]
+    clean: filesToDelete
 
   grunt.task.registerTask 'banner', () ->
     grunt.log.subhead(grunt.file.read('banner.txt'))
@@ -34,6 +35,7 @@ module.exports = (grunt) ->
 
   # grunt.loadNpmTasks 'grunt-exec'
   grunt.loadNpmTasks 'grunt-ffmpeg'
+  grunt.loadNpmTasks 'grunt-contrib-clean'
 
   grunt.registerTask 'default', ['banner','ffmpeg','print']
 
