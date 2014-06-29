@@ -9,3 +9,6 @@ When you're inside the folder with `Gruntfile.coffee` then you can execute like 
     grunt --src=~/Movies --dest~/Movies/Converted
 
 **WARNING**  This is a destructive script. It will delete the old movie once it converts successfully
+
+## License
+This script is licensed under MIT. Do what you want with it.
