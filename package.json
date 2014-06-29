@@ -8,8 +8,11 @@
   "author": "Kris McGinnes",
   "license": "MIT",
   "devDependencies": {
+    "chalk": "^0.4.0",
+    "fluent-ffmpeg": "^1.7.2",
     "grunt": "^0.4.5",
     "grunt-contrib-clean": "^0.5.0",
-    "grunt-ffmpeg": "^0.1.3"
+    "grunt-contrib-copy": "^0.5.0",
+    "progress": "^1.1.6"
   }
 }
